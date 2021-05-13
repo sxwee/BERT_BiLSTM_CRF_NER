@@ -74,6 +74,14 @@ python test.py 	--testset datas/processed/test.txt --model BiLSTMCRF
 
 参数说明：
 
-testset：测试机的路径
+- **testset**：测试集的路径
+
+# GUI界面
+
+本项目还实现了一个基于Tkinter的用户交互界面，通过该界面可以导入文档或用户进行输入，识别完成后还能进行可视化展示，最终还能导出识别的命名实体集，打开GUI界面的运行命令：
+
+```python
+python gui.py
+```
 
 **备注**：运行命名后面的参数也可先做args.py中设置好，然后直接运行相应的脚本即可。
