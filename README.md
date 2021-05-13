@@ -40,9 +40,9 @@ Word2Vec和Glove词嵌入：[下载地址](https://pan.baidu.com/s/1hMZhXCxg1Apv
 
 ```python
 python main.py	--trainset  datas/processed/train.txt \
-				--validset  datas/processed/val.txt \
-    			--pretrained_path  bert_model/chinese_L-12_H-768_A-12 \
-        		--model model_name BertBiLSTMCRF \
+		--validset  datas/processed/val.txt \
+    		--pretrained_path  bert_model/chinese_L-12_H-768_A-12 \
+        	--model model_name BertBiLSTMCRF \
             	--isBERT True \
             	--extra_embedding False \
                 --embedding_path datas/word2vec.bin \
@@ -69,7 +69,8 @@ python main.py	--trainset  datas/processed/train.txt \
 打开test.py文件，设置model_path的值，即训练好的模型的路径，然后运行下面命令即可：
 
 ```python
-python test.py 	--testset datas/processed/test.txt --model BiLSTMCRF
+python test.py 	--testset datas/processed/test.txt \
+		--model BiLSTMCRF
 ```
 
 参数说明：
