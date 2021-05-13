@@ -53,16 +53,16 @@ python main.py	--trainset  datas/processed/train.txt \
 
 参数说明：
 
-- ==trainset==：训练集的路径
-- ==validset==：验证集的路径
-- ==pretrained_path==：bert模型的路径
-- ==model==：模型名，['EmbeddingBiLSTMCRF', 'BertBiLSTMCRF', 'BertIDCNNCRF']
-- ==isBERT==：布尔值，True表示使用**Bert模型**来加载序列数据，False表示采用**常规词嵌入的方式**来加载序列数据
-- ==extra_embedding==：布尔值，True表示使用外部词嵌入，False表示直接使用nn.Embedding随机初始化生成的词嵌入
-- ==embedding_path==：外部词嵌入的加载路径，前提是extra_embedding为True
-- ==dropout_prob==：设置dropout率，范围[0,1]
-- ==batch_size==：数据批大小
-- ==lr==：学习率
+- **trainset**：训练集的路径
+- **validset**：验证集的路径
+- **pretrained_path**：bert模型的路径
+- **model**：模型名，['EmbeddingBiLSTMCRF', 'BertBiLSTMCRF', 'BertIDCNNCRF']
+- **isBERT**：布尔值，True表示使用**Bert模型**来加载序列数据，False表示采用**常规词嵌入的方式**来加载序列数据
+- **extra_embedding**：布尔值，True表示使用外部词嵌入，False表示直接使用nn.Embedding随机初始化生成的词嵌入
+- **embedding_path**：外部词嵌入的加载路径，前提是extra_embedding为True
+- **dropout_prob**：设置dropout率，范围[0,1]
+- **batch_size**：数据批大小
+- **lr**：学习率
 
 ## 模型评估
 
@@ -75,6 +75,6 @@ python test.py 	--testset datas/processed/test.txt \
 
 参数说明：
 
-==testset==：测试机的路径
+testset：测试机的路径
 
 **备注**：运行命名后面的参数也可先做args.py中设置好，然后直接运行相应的脚本即可。
