@@ -36,7 +36,7 @@ Word2Vec和Glove词嵌入：[下载地址](https://pan.baidu.com/s/1hMZhXCxg1Apv
 
 本项目实现了**EmbeddingBiLSTMCRF**、**BertBiLSTMCRF**、**BertIDCNNCRF**三个模型。其中EmbeddingBiLSTMCRF是指使用常规词嵌入+BiLSTM+CRF，其中常规词嵌入包括nn.Embedding层随机初始化的词嵌入或训练好的Word2Vec/Glove词嵌入。BertBiLSTMCRF是指使用Bert词嵌入+BiLSTM+CRF。而BertIDCNNCRF是指Bert词嵌入+IDCNN+CRF，其中IDCNN为自膨胀卷积模块。
 
-默认开启BertBiLSTMCRF模型的训练，运行命令如下（后续的参数可根据自己的实际情况进行更改，也可不进行更改）：
+默认开启BertBiLSTMCRF模型的训练，运行命令如下（后续的参数可根据自己的实际情况进行更改，也可以不进行改进按照args.py中的默认参数运行）：
 
 ```python
 python main.py	--trainset  datas/processed/train.txt \
