@@ -69,8 +69,7 @@ python main.py	--trainset  datas/processed/train.txt \
 打开test.py文件，设置model_path的值，即训练好的模型的路径，然后运行下面命令即可：
 
 ```python
-python test.py 	--testset datas/processed/test.txt \
-				--model BiLSTMCRF
+python test.py 	--testset datas/processed/test.txt --model BiLSTMCRF
 ```
 
 参数说明：
