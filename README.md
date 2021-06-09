@@ -77,7 +77,9 @@ python test.py 	--testset datas/processed/test.txt \
 
 - **testset**：测试集的路径
 
-# GUI界面
+# 系统实现
+
+## GUI版系统
 
 本项目还实现了一个基于Tkinter的用户交互界面，通过该界面可以导入文档或用户进行输入，识别完成后还能进行可视化展示，最终还能导出识别的命名实体集，打开GUI界面的运行命令：
 
@@ -86,3 +88,18 @@ python gui.py
 ```
 
 **备注**：运行命名后面的参数也可先做args.py中设置好，然后直接运行相应的脚本即可。
+
+## Django版系统
+
+本项目基于Django-3.2.3实现了一个基于BERT-BiLSTM-CRF算法模型的命名实体识别系统，系统源码参见cmners文件夹，进入系统后，按照说明的markdown文档的指示下载好相应的模型，然后运行下列命令启动系统：
+
+```python
+python manage.py runserver
+```
+
+然后在浏览器中输入下列的URL即可看到系统的页面：
+
+```
+http://127.0.0.1/ner/system/
+```
+

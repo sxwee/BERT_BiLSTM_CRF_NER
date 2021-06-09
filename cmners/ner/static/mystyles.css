@@ -1,0 +1,64 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+#display{
+    float: left;
+    width: 60%;
+    height: 100%;
+}
+#choices{
+    float: right;
+    width: 40%;
+    height: 100%;
+}
+#contentdisplay{
+    width:100%;
+    height:80%;
+}
+#operation{
+    width: 100%;
+    height: 20%;
+    display:flex;
+    align-items:center;
+}
+#histogram{
+    width: 100%;
+    height: 60%;
+}
+#labelstyle{
+    width: 100%;
+    height: 40%;
+}
+#content{
+    color: black;
+    font-size: medium;
+    font-family:"Microsoft YaHei";
+    width: 100%;
+    height: 100%;
+    border-color: cornflowerblue;
+}
+#selectfile,#startrecognize,#exportfile{
+    font-size: 25px;
+    width: 30%;
+    margin-top: 2% ;
+    margin-left: 2.5%;
+}
+#labelexplain{
+    font-size: x-large;
+    font-weight: bolder;
+    width: 100%;
+    height: 12%;
+}
+#dl1,#dl2,#dl3,#dl4,#dl5,#dl6,#dl7,#dl8{
+    width: 100%;
+    height: 11%;
+    display:flex;
+    justify-content:center;
+
+}
+#label1,#label2,#label3,#label4,#label5,#label6,#label7,#label7,#label8,#label9,#label10,#label11,#label12,#label13,#label14,#label15,#label16{
+    width: 40%;
+    height: 60%;
+    margin-right: 5%;
+}

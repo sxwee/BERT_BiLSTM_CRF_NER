@@ -1,0 +1,114 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>中文药品说明书命名实体识别系统</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mystyles.css' %}">
+    <script src="{% static 'echarts.min.js' %}"></script>
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">  
+    <script src="{% static 'jquery.min.js' %}"></script>  
+    <script src= "{% static 'bootstrap.min.js' %}"></script>
+    <script src= "{% static 'myoperation.js' %}"></script>
+</head>
+<body>
+    <div id='display'>
+        <div id='contentdisplay'>
+            <div id="content" contenteditable="True" style="background-color: #E0FFFF;">请输入要识别的内容</div>
+        </div>
+        <div id="operation">
+            <input type="file" name="file" id="openfile" style="display: none;" onchange="changeMethod(this)"/>
+            <button id="selectfile" type="button" class="btn btn-lg btn-primary" onclick="OpenLocalFile()">文件选择</button>
+            <button id="startrecognize" type="button" class="btn btn-lg btn-primary" onclick="startRecognize()">开始识别</button>
+            <button id="exportfile" type="button" class="btn btn-lg btn-primary" onclick="saveFile()" >导出结果</button>
+        </div>
+    </div>
+    <div id='choices'>
+        <div id="histogram"></div>
+        <div id="labelstyle">
+            <div id="labelexplain">
+                <span>标签说明</span>
+            </div>
+            <div id="dl1">
+                <span id="label1" class="label label-primary" style="background-color: #6495ED;">CONTENT:含量</span>
+                <span id="label2" class="label label-primary" style="background-color: #8470FF;">REASON:致病因</span>
+            </div>
+            <div id="dl2">
+                <span id="label3" class="label label-primary" style="background-color: #00FFFF;">TIME:时长</span>
+                <span id="label4" class="label label-primary" style="background-color: #7FFFD4;">DSPEC:规格</span>
+            </div>
+            <div id="dl3">
+                <span id="label5" class="label label-primary" style="background-color: #00FA9A;">MRL:用药结果级别</span>
+                <span id="label6" class="label label-primary" style="background-color: #FA8072;">SYMPTOM:症状</span>
+            </div>
+            <div id="dl4">
+                <span id="label7" class="label label-primary" style="background-color: #FF69B4;">ROA:给药途径</span>
+                <span id="label8" class="label label-primary" style="background-color: #A020F0;">PE:生理检验</span>
+            </div>
+            <div id="dl5">
+                <span id="label9" class="label label-primary" style="background-color: #008B8B;">DRUG:药品</span>
+                <span id="label10" class="label label-primary" style="background-color: #FF4500;">FREQ:频率</span>
+            </div>
+            <div id="dl6">
+                <span id="label11" class="label label-primary" style="background-color: #FF7F24;">MEDICINE:药物</span>
+                <span id="label12" class="label label-primary" style="background-color: #FFFF00;">SDOSE:单次剂量</span>
+            </div>
+            <div id="dl7">
+                <span id="label13" class="label label-primary" style="background-color: #836FFF;">ARL:作用结果级别</span>
+                <span id="label14" class="label label-primary" style="background-color: #00BFFF;">IL:发生率级别</span>
+            </div>
+            <div id="dl8">
+                <span id="label15" class="label label-primary" style="background-color: #EE8262;">DISEASE:疾病</span>
+                <span id="label16" class="label label-primary" style="background-color: #FF34B3;">CROWD:人群</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var chartDom = document.getElementById('histogram');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        title: {
+            text: '实体数量直方图',
+            x:'center',
+            y:'top'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['CONTENT','REASON','TIME','DSPEC','MRL','SYMPTOM','ROA','PE','DRUG','FREQ','MEDICINE','SDOSE','ARL','IL','DISEASE','CROWD'],
+            axisLabel:{
+                interval:0,
+                rotate:50,//倾斜度 -90 至 90 默认为0
+                margin:2,
+                textStyle:{
+                    fontWeight:"bolder",
+                    color:"#000000"
+                }
+            }
+
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true, //开启显示
+                        position: 'top', //在上方显示
+                        textStyle: { //数值样式
+                            color: 'black',
+                            fontSize: 16
+                        }
+                    }
+                }
+            },
+            data: {{entity_nums}},
+            type: 'bar'
+        }]
+    };
+    option && myChart.setOption(option,true);
+</script>
+</html>
