@@ -91,7 +91,7 @@ python gui.py
 
 ## Django版系统
 
-<video src="C:\Users\wl\OldPC\GitRespository\BERT_BiLSTM_CRF_NER\演示视频.mp4"></video>
+<video src="演示视频.mp4"></video>
 
 本项目基于Django-3.2.3实现了一个基于BERT-BiLSTM-CRF算法模型的命名实体识别系统，系统源码参见cmners文件夹，进入系统后，按照说明的markdown文档的指示下载好相应的模型，然后运行下列命令启动系统：
 
