@@ -24,7 +24,7 @@ BERT模型：[下载地址](https://pan.baidu.com/s/14Oe28mjHN29LnnNHTsjqmA)，�
 
 Word2Vec和Glove词嵌入：[下载地址](https://pan.baidu.com/s/1hMZhXCxg1ApvgdtvyIKBAQ)，提取码：6xt0，备注：下载后解压放入datas目录下
 
-原始数据集：[下载地址](https://pan.baidu.com/s/12SPmw0O-uWnLkOIpLsHABQ)，提取码：y0e1，备注：下载后解压放入datas目录下
+原始数据集：[下载地址](https://pan.baidu.com/s/11Hfhk4d4d-TPvUsrmsh1lA )，提取码：gn5q，备注：下载后解压放入datas目录下
 
 # 使用方法
 
